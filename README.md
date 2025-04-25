@@ -1,47 +1,65 @@
-# GROUP-681-E-commerce-Database-Design
-🎯 Objective
-This challenge will help you master the art of database design🧠💾
-Your group will design an Entity-Relationship Diagram (ERD) and collaboratively build an e-commerce database from scratch.
+# E-Commerce Database Design
+
+![ERD Diagram](https://github.com/waigirikamau/GROUP681-DATABASE-ASSIGNMENT/blob/master/_EDR%20diagram%20design.drawio.png) <!-- Add your diagram image here -->
+
+## Overview
+A comprehensive database design for an e-commerce platform, featuring product management, variations, attributes, and inventory tracking.
+
+## Database Schema
+### Core Tables
+| Table | Description |
+|-------|-------------|
+| `brand` | Stores brand information |
+| `product` | Main product details |
+| `product_item` | Purchasable variants |
+| `product_category` | Product classification |
+
+### Variation System
+| Table | Description |
+|-------|-------------|
+| `product_variation` | Links products to variations |
+| `color` | Available color options |
+| `size_option` | Size options (S/M/L) |
+| `size_category` | Size groupings |
+
+### Media & Attributes
+| Table | Description |
+|-------|-------------|
+| `product_image` | Product photos |
+| `product_attribute` | Custom attributes |
+| `attribute_type` | Data types for attributes |
+| `attribute_category` | Attribute groupings |
+
+## Key Features
+- **Flexible Product Variations**: Support for size/color combinations
+- **Multi-level Categories**: Hierarchical categorization
+- **Extensible Attributes**: Custom specifications system
+- **Inventory Tracking**: Stock management at variant level
+
+## Installation
+1. **Using draw.io**:
+
+2. **Using dbdiagram.io**:
+   
+## Relationships
+```mermaid
+erDiagram
+    BRAND ||--o{ PRODUCT : "has"
+    PRODUCT ||--o{ PRODUCT_ITEM : "contains"
+    PRODUCT ||--o{ PRODUCT_VARIATION : "has"
+```
+
+## Team Collaboration
+1. Clone repository
+2. Use `erd_design.xml` for draw.io
+3. Make changes in feature branches
+4. Submit PR for review
+
+## Export Options
+- **SQL**: PostgreSQL, MySQL, SQLite
+- **Images**: PNG, SVG, PDF
+- **Interactive**: HTML embed
+
 
  
 
-🛠️ Instructions
-1️⃣ Create an ERD ✍️
-Clearly define all entities (tables) and their attributes.
-Understand and document the relationships between tables.
-Identify primary keys, foreign keys, and other constraints.
-Use tools like Lucidchart, draw.io, dbdiagram.io, or MySQL Workbench 🛠️
-2️⃣ Plan the Data Flow 🔄
-Map out how data flows between entities.
-As a team, discuss how the database will be structured and implemented.
-Think like architects! 🏗️
-3️⃣ Group Collaboration 🤝
-Work together on analysis, design, and implementation.
-Everyone should understand every part of the project.
-Share ideas, ask questions, and keep the teamwork strong! 💬
-4️⃣ Submission 🚀
-Create a public GitHub repository 📂
-Upload your final ERD and ecommerce.sql file.
-Ensure everything is accessible to the reviewer 🔍
-🧑‍🤝‍🧑 Group Collaboration Tips
-Stay connected and meet regularly 👥
-Use GitHub for version control, documentation, and teamwork 📘
-Track your progress, share updates, and troubleshoot together 🔧
-Make sure everyone is in the loop 🧭
- 
-
-🗃️ Tables to Be Created
-You'll be building the following tables for your e-commerce platform 🛍️:
-
-🖼️ product_image – Stores product image URLs or file references
-🎨 color – Manages available color options
-🗂️ product_category – Classifies products into categories (e.g., clothing, electronics)
-📦 product – Stores general product details (name, brand, base price)
-🧾 product_item – Represents purchasable items with specific variations
-🏷️ brand – Stores brand-related data
-🔄 product_variation – Links a product to its variations (e.g., size, color)
-📏 size_category – Groups sizes into categories (e.g., clothing sizes, shoe sizes)
-📐 size_option – Lists specific sizes (e.g., S, M, L, 42)
-🧵 product_attribute – Stores custom attributes (e.g., material, weight)
-📚 attribute_category – Groups attributes into categories (e.g., physical, technical)
-🧪 attribute_type – Defines types of attributes (e.g., text, number, boolean)
